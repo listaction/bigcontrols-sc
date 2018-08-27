@@ -261,6 +261,119 @@ function setcompanyWallet(address newCompanyWallet)
 ```
 Sets new company wallet address to which the accumulated ether will be sent
 
+## Run localy with UI
+```
+ganache-cli --gasLimit 8000000 --gasPrice 100000000000
+
+// output
+  Mnemonic:      remember violin confirm festival figure museum famous ride jaguar jealous barely bounce
+  Base HD Path:  m/44'/60'/0'/0/{account_index}
+
+  Listening on localhost:8545
+```
+Open new terminal window
+```
+truffle migrate --network local && remix-ide contracts
+
+// output
+Running migration: 1_initial_migration.js
+Saving artifacts...
+Running migration: 2_deploy_crowdsale.js
+
+Shared folder : contracts/
+Starting Remix IDE at http://localhost:8080 and sharing contracts/
+Thu May 24 2018 16:07:46 GMT+0700 (+07) Remixd is listening on 127.0.0.1:65520
+```
+
+Run your browser and go to http://localhost:8080
+
+Click a button mentioned at the picture below
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/linkLocalhost.png)
+
+Click `connect` on the appeared window
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/connectionReq.png)
+
+Add crowdsale contract to work space
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/addCrowdsale.png)
+
+Click compile button and wait until response apears like mentioned at the picture below
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/compile.png)
+
+Click on metamask window and choose localhost:8545
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/connectMetamask.png)
+
+Click on choosing account button 
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/connectAccount.png)
+
+Open terminal window where you have running `ganache-cli` and copy private key, example below
+```
+Copy private key of account you want to access, e.g. (0) account
+Available Accounts
+==================
+(0) 0x0d517d435a0532459680fbd53ea0cabecff5441f
+(1) 0x69acac2d2980db6bd80ae538a44e9816d71a1b5b
+
+Private Keys
+==================
+(0) d1412a6cdea6a29b6f305d3e99e5f77df45106f77ca99ba3ecff8a459e1dac1d
+
+```
+
+Scroll down and choose import account
+
+Paste copied private key to appropriate field
+
+Choose the ethereum network provider, take the `Injected Web3`
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/provider.png)
+
+To run WITHOUT Metamask
+
+By default ganache-cli starts at port 8545, so NO changes required
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/providerDialog2.png)
+
+Make sure that you successfully connected to your local test Ethereum network.
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/web3set.png)
+
+Recall the output of `truffle migrate` and copy the last address
+```
+Running migration: 2_deploy_crowdsale.js
+  Deploying Utils...
+  ... 0xcdbf257515d9ed2c31921af25691e52433474498cad405b8476cc5d5263f7b95
+  Utils: 0x6e332b6b3eea54fdaf43b682898114b5f52c42cf
+  Deploying Ownable...
+  ... 0xed6e6ba84de2eb0e3e32820136cba433fcf7d632ed9024fa119fd900e87b7f65
+  Ownable: 0x57a5224773c0b99345f950ddfe360796334567b5
+  Deploying Managed...
+  ... 0xecde51800baaf5a84bfb9d72c96e76c7dd21fdc8b8cc732a68478115bb69ea5a
+  Managed: 0x513d891d0d9aabd6b72a42a6eff105015db582e5
+  Deploying Crowdsale...
+  ... 0xbabdb4300817fcf9ea8f40943bf2bbbb3961fe90f2ab05b0fe50b114dd2c984d
+  Crowdsale: 0x5d20defc8f1468a635fb5bfad3702e9e8a5ee86e
+Saving artifacts...
+
+```
+Currently it is `Crowdsale: 0x5d20defc8f1468a635fb5bfad3702e9e8a5ee86e`
+
+Paste copied address to specific field and click "At Address", the instance of smart contract should appears below
+
+![](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/ReadmeImg/atAddress.png)
+
+Now you are ready for testing
+
+### Transaction
+##### By default the gas estimation goes wrong, so have to do it manualy.
+For succesffull transaction execution you must set TX gas limit to at 300000
+
+
 ## Usage of the contract
 ---
 
