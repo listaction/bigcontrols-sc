@@ -2,9 +2,9 @@
 
 ## Class Diagrams
 
-![Distribution Inheritance](https://bitbucket.org/krambc/eth-parity-bc/raw/master/PrivateSale/galery/Contracts%20Inheritance/img/Distribution%20Inheritance%20Diagram.png)
+![Distribution Inheritance](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/Contracts%20Inheritance/img/Distribution%20Inheritance%20Diagram.png)
 
-![Token Inheritance](https://bitbucket.org/krambc/eth-parity-bc/raw/master/PrivateSale/galery/Contracts%20Inheritance/img/Token%20Inheritance%20Diagram.png)
+![Token Inheritance](https://raw.githubusercontent.com/listaction/bigcontrols-sc/master/galery/Contracts%20Inheritance/img/Token%20Inheritance%20Diagram.png)
 
 ## ICO stage Functions
 
