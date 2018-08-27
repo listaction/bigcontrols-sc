@@ -18,11 +18,10 @@ $ ganache-cli --gasLimit 8000000 --gasPrice 100000000000
 
 
 ```
-$ cd PrivateSale
 // run unit test
-PrivateSale$ truffle test --network local
+truffle test --network local
 // run coverage test
-PrivateSale$ truffle solium -d contracts/ && solidity-coverage
+truffle solium -d contracts/ && solidity-coverage
 
 // output
 
